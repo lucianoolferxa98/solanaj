@@ -25,7 +25,7 @@ public class TokenProgram {
         return PublicKey.findProgramAddress(Arrays.asList(owner.toByteArray(), programId.toByteArray(), mint.toByteArray()), ASSOCIATED_TOKEN_PROGRAM_ID).getAddress().toBase58();
     }
 
-    private static TransactionInstruction createAssociatedTokenAccountInstruction(PublicKey prigramId, PublicKey mint, PublicKey associatedAccount, PublicKey owner, PublicKey payer) {
+    private static TransactionInstruction createAssociatedTokenAccount(PublicKey prigramId, PublicKey mint, PublicKey associatedAccount, PublicKey owner, PublicKey payer) {
         byte[] data = new byte[0];
         List<AccountMeta> keys = new ArrayList<>();
         keys.add(new AccountMeta(payer, true, true));
@@ -38,8 +38,8 @@ public class TokenProgram {
         return new TransactionInstruction(ASSOCIATED_TOKEN_PROGRAM_ID, keys, data);
     }
 
-    public static TransactionInstruction createAssociatedTokenAccountInstruction(PublicKey programId, String mint, String associatedAccount, String owner, String payer) {
-        return createAssociatedTokenAccountInstruction(
+    public static TransactionInstruction createAssociatedTokenAccount(PublicKey programId, String mint, String associatedAccount, String owner, String payer) {
+        return createAssociatedTokenAccount(
                 programId,
                 new PublicKey(mint),
                 new PublicKey(associatedAccount),
@@ -49,7 +49,7 @@ public class TokenProgram {
     }
 
 
-    private static TransactionInstruction createTransferCheckedInstruction(PublicKey programId,PublicKey source, PublicKey mint, PublicKey destination, PublicKey owner, List<String> multiSigners, Long amount, Integer decimals) {
+    private static TransactionInstruction createTransferChecked(PublicKey programId, PublicKey source, PublicKey mint, PublicKey destination, PublicKey owner, List<String> multiSigners, Long amount, Integer decimals) {
         // 1 byte instruction index + 8 bytes amount + 1 bytes decimals
         byte[] data = new byte[1 + 8 + 1];
         uint8ToByteArrayLE(12, data, 0);
@@ -70,7 +70,7 @@ public class TokenProgram {
         return new TransactionInstruction(programId, keys, data);
     }
 
-    public static TransactionInstruction createTransferCheckedInstruction(PublicKey programId,String source, String mint, String destination, String owner, List<String> multiSigners, Long amount, Integer decimals) {
-        return createTransferCheckedInstruction(programId,new PublicKey(source), new PublicKey(mint), new PublicKey(destination), new PublicKey(owner), multiSigners, amount, decimals);
+    public static TransactionInstruction createTransferChecked(PublicKey programId, String source, String mint, String destination, String owner, List<String> multiSigners, Long amount, Integer decimals) {
+        return createTransferChecked(programId,new PublicKey(source), new PublicKey(mint), new PublicKey(destination), new PublicKey(owner), multiSigners, amount, decimals);
     }
 }

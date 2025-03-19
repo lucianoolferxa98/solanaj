@@ -1,10 +1,6 @@
 package org.p2p.solanaj.rpc;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.List;
+import java.util.*;
 
 import org.p2p.solanaj.core.Account;
 import org.p2p.solanaj.core.PublicKey;
@@ -40,6 +36,19 @@ public class RpcApi {
         String recentBlockhash = getRecentBlockhash();
         transaction.setRecentBlockHash(recentBlockhash);
         transaction.sign(signers);
+        byte[] serializedTransaction = transaction.serialize();
+
+        String base64Trx = Base64.getEncoder().encodeToString(serializedTransaction);
+
+        List<Object> params = new ArrayList<Object>();
+
+        params.add(base64Trx);
+        params.add(new RpcSendTransactionConfig());
+
+        return client.call("sendTransaction", params, String.class);
+    }
+
+    public String sendTransaction(Transaction transaction) throws RpcException {
         byte[] serializedTransaction = transaction.serialize();
 
         String base64Trx = Base64.getEncoder().encodeToString(serializedTransaction);

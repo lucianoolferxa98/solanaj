@@ -14,7 +14,7 @@ import java.util.List;
 public class NonceAccount extends Account {
     public static Long NONCE_ACCOUNT_LENGTH = 80L;
     private PublicKey authorizedPubkey;
-    private String nonce;
+    private String blockHash;
     private BigDecimal feeCalculator;
 
     public static NonceAccount fromAccountData(List<String> data) {
@@ -35,7 +35,7 @@ public class NonceAccount extends Account {
 
         byte[] blockHashBytes = new byte[32];
         System.arraycopy(decode, 40, blockHashBytes, 0, 32);
-        nonceAccount.setNonce(Base58.encode(blockHashBytes));
+        nonceAccount.setBlockHash(Base58.encode(blockHashBytes));
 
         byte[] lamportBytes = new byte[8];
         System.arraycopy(decode, 72, lamportBytes, 0, 8);
@@ -47,7 +47,7 @@ public class NonceAccount extends Account {
     public String toString() {
         return "NonceAccount{" +
                 "authorizedPubkey='" + authorizedPubkey + '\'' +
-                ", nonce='" + nonce + '\'' +
+                ", nonce='" + blockHash + '\'' +
                 ", feeCalculator=" + feeCalculator +
                 '}';
     }
@@ -60,12 +60,12 @@ public class NonceAccount extends Account {
         this.authorizedPubkey = authorizedPubkey;
     }
 
-    public String getNonce() {
-        return nonce;
+    public String getBlockHash() {
+        return blockHash;
     }
 
-    public void setNonce(String nonce) {
-        this.nonce = nonce;
+    public void setBlockHash(String blockHash) {
+        this.blockHash = blockHash;
     }
 
     public BigDecimal getFeeCalculator() {

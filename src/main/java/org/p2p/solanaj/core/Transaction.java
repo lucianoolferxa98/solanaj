@@ -37,6 +37,10 @@ public class Transaction {
         this.feePayer = feePayer;
     }
 
+    public void setFeePayer(String feePayer) {
+        this.feePayer = new PublicKey(feePayer);
+    }
+
     public void sign(Account signer) {
         sign(Arrays.asList(signer));
     }
